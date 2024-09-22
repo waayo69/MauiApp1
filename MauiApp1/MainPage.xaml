@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MainPage">
+    <ContentPage.Resources>
+        <Color x:Key="Primary">#ff0000</Color>
+        <Color x:Key="Secondary">#00FF00</Color>
+        <Color x:Key="Tertiary">#0000FF</Color>
+    </ContentPage.Resources>
+    <Grid x:Name="Container">
+        <Frame BackgroundColor="SkyBlue"
+               CornerRadius="25" 
+               VerticalOptions="Center"
+               Margin="30,0,30,0">
+            <VerticalStackLayout>
+                <Label FontAttributes="Bold"
+                      TextColor="Black"
+                      HorizontalOptions="Center"
+                      Text="Hex Value"/>
+                <Label 
+    x:Name="lblHex"
+    HorizontalTextAlignment="Center"
+    Text="Hex Value"
+    VerticalOptions="Center"/>
+                <Label Text="Red"></Label>
+                <Slider x:Name="sldRed"
+                   MaximumTrackColor="White"
+                   MinimumTrackColor="{StaticResource Primary}"
+                   ThumbColor="Black" IsEnabled="False"
+                   ValueChanged="Slider_ValueChanged"/>
+                <Label Text="Green"></Label>
+                <Slider x:Name="sldGreen"
+                   MaximumTrackColor="White"
+                   MinimumTrackColor="{StaticResource Secondary}"
+                   ThumbColor="Black" IsEnabled="False"
+                        ValueChanged="Slider_ValueChanged"/>
+                <Label Text="Blue"></Label>
+                <Slider x:Name="sldBlue"
+                   MaximumTrackColor="White"
+                   MinimumTrackColor="{StaticResource Tertiary}"
+                   ThumbColor="Black" IsEnabled="False"
+                        ValueChanged="Slider_ValueChanged"/>
+                <Frame CornerRadius="15" HorizontalOptions="Center">
+                    <HorizontalStackLayout>
+                        <Label FontAttributes="Bold"
+                       TextColor="Black"
+                               HorizontalTextAlignment="Start"
+                       Text="Enter Hex Code:"/>
+                        <Entry x:Name="HexEntry"
+                       Placeholder="#RRGGBB"/>
+                        <Button
+                            x:Name="Set"
+                            Text="Set Color"
+                            TextColor="Black"
+                            FontAttributes="Bold"
+                            Clicked="btnSet_Clicked"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Button x:Name="btnRand"
+                        BackgroundColor="{StaticResource Primary}"
+                        FontAttributes="Bold"
+                        Text="Random Color Generator" TextColor="Black"
+                        Clicked="btnRand_Clicked"/>
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>
